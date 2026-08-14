@@ -1,6 +1,7 @@
 import subprocess
 import shutil
 from pathlib import Path
+from typing import Callable, Optional
 
 from PIL import Image
 
@@ -57,19 +58,20 @@ def convert_media(input_path: str, output_path: str,
                 progress_callback("Converting...", percent)
             except ValueError:
                 pass
-            
+
     process.wait()
     if process.returncode != 0:
         raise RuntimeError(f"ffmpeg failed with code {process.returncode}")
     return output_path
 
-def convert(input_path: str, output_path: str) -> str:
+def convert(input_path: str, output_path: str,
+            progress_callback: Optional[Callable[[str, float], None]] = None) -> str:
     in_ext = Path(input_path).suffix.lower().lstrip(".")
     out_ext = Path(output_path).suffix.lower().lstrip(".")
 
     if in_ext in IMAGE_EXTS and out_ext in IMAGE_EXTS:
         return convert_image(input_path, output_path)
     elif in_ext in VIDEO_EXTS or out_ext in VIDEO_EXTS:
-        return convert_media(input_path, output_path)
+        return convert_media(input_path, output_path, progress_callback=progress_callback)
     else:
         raise ValueError(f"unsupported conversion: {in_ext} -> {out_ext}")
