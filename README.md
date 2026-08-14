@@ -56,6 +56,12 @@ currently configurable from the UI. ( i probably wont do this, but hey its easy 
 Browse to a file, pick a target format, click **Convert**. Output saves
 next to the input file with the new extension.
 
+## Images
+
+![](https://raw.githubusercontent.com/Pud1337/pybeta/refs/heads/main/images/download.png "pybeta download tab")
+
+![](https://raw.githubusercontent.com/Pud1337/pybeta/refs/heads/main/images/convert.png "pybeta convert tab")
+
 ## Known limitations / possible WIP
 
 - Download location isn't user-configurable yet (always `~/Downloads`)
