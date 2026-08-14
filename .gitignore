@@ -1,0 +1,26 @@
+# venv
+venv/
+.venv/
+env/
+ 
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+ 
+# pyinstaller
+*.spec
+ 
+# editor/OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+ 
+# downloaded/converted media tests
+# *.mp4
+# *.mp3
+# *.gif
