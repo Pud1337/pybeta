@@ -112,3 +112,7 @@ class App(ctk.CTk):
             self.after(0, self.conv_status.configure, {"text": f"Done: {Path(out_path).name}"})
         except Exception as e:
             self.after(0, self.conv_status.configure, {"text": f"Error: {e}"})
+
+def run():
+    app = App()
+    app.mainloop()
