@@ -3,6 +3,7 @@ from pathlib import Path
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
 from core import converter
+from core import downloader
 
 class App(ctk.CTk):
     def __init__(self):
